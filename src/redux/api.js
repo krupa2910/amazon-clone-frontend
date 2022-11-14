@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ADDTOCART, GETCARTITEMS, LOGIN, PAYMENT, PRODUCTS, REGISTER, REMOVEFROMCART, UPDATECARTITEM } from '../utlis/constant';
 
 const axiosInstance = axios.create({
-    baseURL: 'https://git.heroku.com/ecommerce-amazonclone.git',
+    baseURL: 'https://ecommerce-amazonclone.herokuapp.com',
     
   });
 
