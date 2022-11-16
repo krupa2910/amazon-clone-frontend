@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Checkout } from "../redux/features/productSlice";
 
 const Payment = ({ items }) => {
-  //console.log("items", items);
+  console.log("items", items);
   const dispatch = useDispatch();
-  const user  = useSelector((state)=> state.auth.user);
+  //const user  = useSelector((state)=> state.auth.user);
  // console.log("user",user);
   const tokenHandler = () => {
-    
-    dispatch(Checkout({ items ,user}));
+    //const user = JSON.parsel(localStorage.getItem('profile'))
+
+    dispatch(Checkout(items));
   };
   return (
     <button 

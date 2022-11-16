@@ -28,7 +28,7 @@ function App() {
               <Route exact path='/signup' element={<SignUp/>}/>
               <Route exact path='/login' element={<Login/>}/>
               <Route exact path='/checkout' element={<Checkout/>}/>
-              <Route path='/checkout-success' element={<CheckoutSuccess/>} />
+              <Route exact path='/checkout-success' element={<CheckoutSuccess/>} />
               
            </Routes>
         </Router>

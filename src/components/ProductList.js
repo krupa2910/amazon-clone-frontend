@@ -16,12 +16,11 @@ const ProductList = () => {
     ...state.auth,
      ...state.product
   }));
-  //console.log("ffj",searchItems);
-
+ 
   useEffect(() => {
     let userId = JSON.parse(localStorage.getItem("profile"));
     //console.log("user===>",userId.user._id);
-    setUserId(userId.user._id)
+    setUserId(userId?.user._id)
   }, []);
   useEffect(() => {
     dispatch(getAllProduct());

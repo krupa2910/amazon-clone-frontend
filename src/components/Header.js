@@ -22,7 +22,7 @@ const Header = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("profile"));
 
-    setUser(user.user.name);
+    setUser(user?.user?.name);
   }, []);
 
   

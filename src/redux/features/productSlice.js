@@ -34,12 +34,13 @@ export const AddtToCart = createAsyncThunk(
 );
 export const Checkout = createAsyncThunk(
   "product/checkout",
-  async ({ user, items },{rejectWithValue}) => {
-    const orderItem = items.items;
-    const total = items.basketTotal;
+  async ( items ,{rejectWithValue}) => {
+    
+   console.log("====>>>",items);
+   // const total = items.basketTotal;
     try {
-      const res = await api.checkout({ user, orderItem, total });
-      //console.log(res);
+      const res = await api.checkout({items});
+       console.log("==>",res);
       if (res.data.Url) {
         window.location.href = res.data.Url;
       }
@@ -67,7 +68,7 @@ export const updatecartItem = createAsyncThunk(
     try {
      // console.log("====>jkdjoi", type, userId, itemId);
       const res = await api.updateCartItem({ userId, itemId, type });
-     // console.log("res", res);
+     console.log("res", res);
       return res.data.items;
     } catch (error) {
       return rejectWithValue(error)
@@ -101,7 +102,9 @@ const productSlice = createSlice({
           state.basketTotal = price.reduce((total, amount) => {
             return total + amount;
           });
+
         }
+
       }
   
     },
