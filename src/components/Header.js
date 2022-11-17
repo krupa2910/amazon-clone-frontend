@@ -35,7 +35,7 @@ const Header = () => {
         item.category.toLowerCase().includes(searchvalue.toLowerCase())
       );
     });
-    setSearchItem(searchProducts);
+   // setSearchItem(searchProducts);
     dispatch(searchProducts({searchProduct,value}))
   };
 
@@ -64,6 +64,7 @@ const Header = () => {
             name="search"
             ref={search}
             value={searchvalue}
+           
             onChange={(e) => setSearchValue(e.target.value)}
             // ref={searchRef}
           />
